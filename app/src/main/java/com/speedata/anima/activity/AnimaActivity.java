@@ -2,7 +2,6 @@ package com.speedata.anima.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -18,6 +17,7 @@ public class AnimaActivity extends AppCompatActivity {
     private LayoutAnimationController mLayoutAnimationController;
     private LinearLayout mLinearLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +25,12 @@ public class AnimaActivity extends AppCompatActivity {
         initView();
     }
 
+
     private void initView() {
+
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.text_alpha);
         animation.setFillAfter(true);
+
         mLayoutAnimationController = new LayoutAnimationController(animation);
         mLayoutAnimationController.setOrder(LayoutAnimationController.ORDER_NORMAL);
 
@@ -43,7 +46,7 @@ public class AnimaActivity extends AppCompatActivity {
     }
 
     private void startAnima() {
-        mLinearLayout.setVisibility(View.VISIBLE);
+
         mLayoutAnimationController.start();
     }
 }
